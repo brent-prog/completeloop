@@ -1,0 +1,24 @@
+FINAL DEPLOYMENT PATH
+
+This is the static version. It has no Vite, no React, no npm package, and no build step.
+
+Files included:
+.gitignore
+index.html
+styles.css
+vercel.json
+public/favicon.png
+
+Important Vercel setting:
+If Vercel still says "vite: command not found", the Vercel project is still configured to run Vite from an earlier setup. Either:
+1. Go to Vercel > Project > Settings > Build and Deployment and set:
+   Framework Preset: Other
+   Build Command: blank
+   Install Command: blank
+   Output Directory: .
+
+or
+
+2. Delete the Vercel project and import the GitHub repo fresh after these static files are pushed.
+
+Do not use a ZIP that contains package.json, node_modules, dist, src, or vite.config.js.
