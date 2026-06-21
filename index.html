@@ -114,5 +114,28 @@
     <div class="footer-col"><h3>Connect</h3><a href="https://www.linkedin.com/in/brent-pattison-canada/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
     <div class="footer-bottom"><span>© 2026 CompleteLoop. All rights reserved.</span><span>Structured coaching for a stronger knowledge loop.</span></div>
   </footer>
+  <script>
+    (() => {
+      const menu = document.querySelector('.mobile-menu');
+      if (!menu) return;
+
+      const closeMenu = () => {
+        menu.removeAttribute('open');
+      };
+
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!menu.open) return;
+        if (!menu.contains(event.target)) closeMenu();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeMenu();
+      });
+    })();
+  </script>
 </body>
 </html>
